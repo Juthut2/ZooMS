@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="Homepage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="999.0" prefWidth="1920.0" style="-fx-background-color: #e2f3c9;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zooms.MenuController">
+   <children>
+      <Pane fx:id="Pane1" prefHeight="125.0" prefWidth="1929.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #4b8a3d, #2e4a26);">
+         <children>
+            <ImageView fitHeight="117.0" fitWidth="189.0" layoutX="-4.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../DSAFinalProject/src/main/resources/Images/AngaUnivLogo.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="162.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modeng Zoo Sanctuary" wrappingWidth="535.9999999999998">
+               <font>
+                  <Font name="Impact" size="53.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="WelcomeHomePage" layoutX="604.0" layoutY="286.0" prefHeight="257.0" prefWidth="1268.0" style="-fx-background-color: #4b8a3d; -fx-background-radius: 15;">
+         <children>
+            <Label fx:id="d" layoutX="34.0" layoutY="21.0" prefHeight="55.0" prefWidth="431.0" style="-fx-text-fill: black;" styleClass="labels" stylesheets="@../../../../../../../DSAFinalProject/src/main/resources/values/style.css" text="September 30, 2024" textFill="#ebe2e2">
+               <font>
+                  <Font name="Tahoma Bold" size="40.0" />
+               </font>
+            </Label>
+            <Label layoutX="38.0" layoutY="101.0" prefHeight="83.0" prefWidth="536.0" style="-fx-text-fill: black;" stylesheets="@../../../../../../../DSAFinalProject/src/main/resources/values/style.css" text="Welcome back, Kevin!">
+               <font>
+                  <Font name="System Bold" size="43.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="labels" />
+                  <String fx:value="fam" />
+               </styleClass>
+            </Label>
+            <Label layoutX="43.0" layoutY="204.0" prefHeight="50.0" prefWidth="993.0" styleClass="ye" stylesheets="@../../../../../../../DSAFinalProject/src/main/resources/values/style.css" text="“Pleasure in the job puts perfection in the work.” - Aristotle" textFill="#9fae61">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="StudentStats" layoutX="600.0" layoutY="558.0" prefHeight="379.0" prefWidth="588.0" style="-fx-background-color: #4b8a3d; -fx-background-radius: 35;" />
+      <Pane fx:id="CourseStats" layoutX="1280.0" layoutY="556.0" prefHeight="379.0" prefWidth="588.0" style="-fx-background-color: #4b8a3d; -fx-background-radius: 35;" />
+      <VBox layoutX="89.0" layoutY="169.0" prefHeight="807.0" prefWidth="404.0" style="-fx-background-color: #4b8a3d; -fx-background-radius: 35;">
+         <children>
+            <Pane prefHeight="176.0" prefWidth="495.0">
+               <children>
+                  <Button fx:id="studentListPane" layoutX="24.0" layoutY="22.0" mnemonicParsing="false" onAction="#goToStudentList" prefHeight="150.0" prefWidth="404.0" style="-fx-text-fill: black;" stylesheets="@../../../../../../../DSAFinalProject/src/main/resources/values/style.css" text="Animal Exhibit" textAlignment="CENTER">
+                     <font>
+                        <Font name="Bodoni MT Condensed" size="44.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="menu-panel" />
+                        <String fx:value="labels" />
+                        <String fx:value="my-button-class" />
+                     </styleClass>
+                  </Button>
+                  <ImageView fitHeight="125.0" fitWidth="130.0" layoutX="14.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../DSAFinalProject/src/main/resources/Images/Icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="147.0" prefWidth="508.0">
+               <children>
+                  <Button layoutX="-1.0" layoutY="4.0" mnemonicParsing="false" onAction="#goToCourseList" prefHeight="150.0" prefWidth="404.0" style="-fx-text-fill: black;" stylesheets="@../../../../../../../DSAFinalProject/src/main/resources/values/style.css" text="Visitors">
+                     <styleClass>
+                        <String fx:value="menu-panel" />
+                        <String fx:value="labels" />
+                        <String fx:value="my-button-class" />
+                     </styleClass>
+                     <font>
+                        <Font name="Bodoni MT Condensed" size="41.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="125.0" fitWidth="100.0" layoutX="34.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../DSAFinalProject/src/main/resources/Images/CourseListIcon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="161.0" prefWidth="424.0">
+               <children>
+                  <Button layoutX="1.0" layoutY="3.0" mnemonicParsing="false" onAction="#goToMergeCourse" prefHeight="150.0" prefWidth="404.0" style="-fx-text-fill: black;" stylesheets="@../../../../../../../DSAFinalProject/src/main/resources/values/style.css" text="Events">
+                     <font>
+                        <Font name="Bodoni MT Condensed" size="41.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="menu-panel" />
+                        <String fx:value="labels" />
+                     </styleClass>
+                  </Button>
+                  <ImageView fitHeight="125.0" fitWidth="100.0" layoutX="32.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../DSAFinalProject/src/main/resources/Images/MergeIcon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="186.0" prefWidth="404.0">
+               <children>
+                  <Button layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#exitApplication" prefHeight="150.0" prefWidth="404.0" style="-fx-text-fill: black;" stylesheets="@../../../../../../../DSAFinalProject/src/main/resources/values/style.css" text="Employees">
+                     <font>
+                        <Font name="Bodoni MT Condensed" size="41.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="menu-panel" />
+                        <String fx:value="labels" />
+                     </styleClass>
+                  </Button>
+                  <ImageView fitHeight="125.0" fitWidth="100.0" layoutX="37.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../DSAFinalProject/src/main/resources/Images/ExitIcon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="186.0" prefWidth="404.0">
+               <children>
+                  <Button layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#exitApplication" prefHeight="150.0" prefWidth="404.0" style="-fx-text-fill: black;" stylesheets="@../../../../../../../DSAFinalProject/src/main/resources/values/style.css" text="Exit">
+                     <font>
+                        <Font name="Bodoni MT Condensed" size="41.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="menu-panel" />
+                        <String fx:value="labels" />
+                     </styleClass>
+                  </Button>
+                  <ImageView fitHeight="125.0" fitWidth="100.0" layoutX="37.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../DSAFinalProject/src/main/resources/Images/ExitIcon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <Circle fx:id="CircleProfile" fill="#4b8a3d" layoutX="1737.0" layoutY="210.0" radius="53.0" stroke="BLACK" strokeType="INSIDE" />
+      <ImageView fx:id="siKevin" fitHeight="125.0" fitWidth="100.0" layoutX="1680.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../DSAFinalProject/src/main/resources/Images/Founder.png" />
+         </image>
+         <clip>
+            <Circle centerX="55.0" centerY="47.0" radius="47.0" />
+         </clip>
+      </ImageView>
+   </children>
+</AnchorPane>

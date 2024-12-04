@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="HomePagePane" prefHeight="800.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zooms.HomePageController">
+   <children>
+      <StackPane layoutX="6.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0">
+         <children>
+            <AnchorPane prefHeight="1800.0" prefWidth="1440.0">
+               <children>
+                  <AnchorPane layoutX="-6.0" layoutY="-2.0" prefHeight="93.0" prefWidth="1446.0" style="-fx-background-color: #4b8a3d;" stylesheets="@values/HomePage.css">
+                     <children>
+                        <Button layoutX="1130.0" layoutY="25.0" mnemonicParsing="false" onAction="#goToVisitors" prefHeight="42.0" prefWidth="91.0" styleClass="btn" stylesheets="@values/HomePage.css" text="Visitors">
+                           <font>
+                              <Font name="Segoe UI Black" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="699.0" layoutY="25.0" mnemonicParsing="false" onAction="#goToAnimals" prefHeight="42.0" prefWidth="90.0" styleClass="btn" stylesheets="@values/HomePage.css" text="Animals">
+                           <font>
+                              <Font name="Segoe UI Black" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="799.0" layoutY="25.0" mnemonicParsing="false" onAction="#goToEnclosures" prefHeight="42.0" prefWidth="106.0" styleClass="btn" stylesheets="@values/HomePage.css" text="Enclosures">
+                           <font>
+                              <Font name="Segoe UI Black" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="1041.0" layoutY="25.0" mnemonicParsing="false" onAction="#goToEvents" prefHeight="42.0" prefWidth="80.0" styleClass="btn" stylesheets="@values/HomePage.css" text="Events">
+                           <font>
+                              <Font name="Segoe UI Black" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="1235.0" layoutY="25.0" mnemonicParsing="false" onAction="#goToTickets" prefHeight="42.0" prefWidth="80.0" styleClass="btn" stylesheets="@values/HomePage.css" text="Tickets">
+                           <font>
+                              <Font name="Segoe UI Black" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="1323.0" layoutY="25.0" mnemonicParsing="false" onAction="#goToEmployees" prefHeight="42.0" prefWidth="109.0" styleClass="btn" stylesheets="@values/HomePage.css" text="Employees">
+                           <font>
+                              <Font name="Segoe UI Black" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="912.0" layoutY="25.0" mnemonicParsing="false" onAction="#goToAnimalCare" prefHeight="42.0" prefWidth="118.0" styleClass="btn" stylesheets="@values/HomePage.css" text="Animal Care">
+                           <font>
+                              <Font name="Segoe UI Black" size="16.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="27.0" layoutY="14.0" prefHeight="64.0" prefWidth="530.0" text="Moodeng Zoo management System">
+                           <font>
+                              <Font name="Microsoft Tai Le Bold" size="31.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <ScrollPane hbarPolicy="NEVER" layoutY="91.0" prefHeight="709.0" prefWidth="1440.0" vbarPolicy="NEVER">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1800.0" prefWidth="1440.0">
+                           <children>
+                              <ImageView fitHeight="544.0" fitWidth="1443.0" layoutX="-6.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/ZOO.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutY="540.0" prefHeight="533.0" prefWidth="1438.0" styleClass="white-bg" stylesheets="@values/HomePage.css">
+                                 <children>
+                                    <Label layoutX="52.0" layoutY="30.0" prefHeight="78.0" prefWidth="183.0" text="Welcome to">
+                                       <font>
+                                          <Font name="Bodoni MT" size="36.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="241.0" layoutY="30.0" prefHeight="78.0" prefWidth="532.0" text="Moodeng Zoo Management System" textFill="#4b8a3d">
+                                       <font>
+                                          <Font name="Calibri" size="36.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="60.0" layoutY="105.0" prefHeight="42.0" prefWidth="721.0" text="Welcome to Moodeng Zoo Management System, your modern solution for simplifying zoo">
+                                       <font>
+                                          <Font name="Arial" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="60.0" layoutY="133.0" prefHeight="42.0" prefWidth="792.0" text="operations. From animal care and enclosure management to visitor ticketing, events, and analytics,">
+                                       <font>
+                                          <Font name="Arial" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="60.0" layoutY="162.0" prefHeight="42.0" prefWidth="793.0" text="Moodeng streamlines every aspect of your zoo’s management. Designed to enhance efficiency and">
+                                       <font>
+                                          <Font name="Arial" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="60.0" layoutY="191.0" prefHeight="42.0" prefWidth="793.0" text="support conservation efforts, our system lets you focus on providing exceptional animal care and">
+                                       <font>
+                                          <Font name="Arial" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="60.0" layoutY="220.0" prefHeight="42.0" prefWidth="272.0" text="unforgettable visitor experiences. ">
+                                       <font>
+                                          <Font name="Arial" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="362.0" fitWidth="521.0" layoutX="890.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/moodeng.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <Pane layoutX="890.0" layoutY="385.0" prefHeight="136.0" prefWidth="521.0" stylesheets="@values/HomePage.css">
+                                       <children>
+                                          <Label layoutX="6.0" layoutY="-4.0" prefHeight="36.0" prefWidth="141.0" text="Name: Moodeng">
+                                             <font>
+                                                <Font name="Calibri" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="6.0" layoutY="29.0" prefHeight="36.0" prefWidth="252.0" text="Species: Choeropsis liberiensis">
+                                             <font>
+                                                <Font name="Calibri" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="6.0" layoutY="66.0" prefHeight="36.0" prefWidth="199.0" text="Birthdate: July 10, 2024">
+                                             <font>
+                                                <Font name="Calibri" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="6.0" layoutY="100.0" prefHeight="36.0" prefWidth="157.0" text="Age: 4 months old">
+                                             <font>
+                                                <Font name="Calibri" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <styleClass>
+                                          <String fx:value="pane" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                              <Label layoutX="424.0" layoutY="81.0" prefHeight="78.0" prefWidth="593.0" text="Welcome to Moodeng ZooMS">
+                                 <font>
+                                    <Font name="Bodoni MT" size="48.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutX="-1.0" layoutY="1075.0" prefHeight="632.0" prefWidth="1440.0" styleClass="white-bg" stylesheets="@values/HomePage.css">
+                                 <children>
+                                    <Pane layoutX="14.0" layoutY="26.0" prefHeight="272.0" prefWidth="418.0" stylesheets="@values/HomePage.css">
+                                       <styleClass>
+                                          <String fx:value="pane" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                       <children>
+                                          <ImageView fitHeight="216.0" fitWidth="216.0" layoutX="14.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/user.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="221.0" layoutY="180.0" prefHeight="64.0" prefWidth="183.0" text="Total Number of Visitors">
+                                             <font>
+                                                <Font name="Impact" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" layoutX="237.0" layoutY="43.0" prefHeight="50.0" prefWidth="167.0" text="0">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="449.0" layoutY="26.0" prefHeight="272.0" prefWidth="418.0" stylesheets="@values/HomePage.css">
+                                       <styleClass>
+                                          <String fx:value="pane" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                    </Pane>
+                                    <Pane layoutX="14.0" layoutY="316.0" prefHeight="272.0" prefWidth="418.0" stylesheets="@values/HomePage.css">
+                                       <styleClass>
+                                          <String fx:value="pane" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                    </Pane>
+                                    <Pane layoutX="449.0" layoutY="316.0" prefHeight="272.0" prefWidth="418.0" stylesheets="@values/HomePage.css">
+                                       <styleClass>
+                                          <String fx:value="pane" />
+                                          <String fx:value="radius" />
+                                       </styleClass>
+                                    </Pane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

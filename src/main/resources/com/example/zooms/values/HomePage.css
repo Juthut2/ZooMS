@@ -1,0 +1,30 @@
+.btn{
+    -fx-background-color: transparent;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+}
+.nav-btn{
+    -fx-background-color: #4b8a3d;
+    -fx-cursor: hand;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+}
+.nav-btn:hover{
+    -fx-background-color: linear-gradient(to bottom right, #e2f3c9, #4b8a3d);
+    -fx-text-fill: #000;
+}
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+}
+.transparent{
+    -fx-background-color: transparent;
+}
+.white-bg{
+    -fx-background-color: #fff;
+}
+.pane{
+    -fx-background-color: #81bf6e;
+}
+.radius{
+    -fx-background-radius: 8px;
+}
