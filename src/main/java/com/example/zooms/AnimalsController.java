@@ -109,24 +109,33 @@ public class AnimalsController {
     @FXML
     void updateAnimal(ActionEvent event) {
         if (validateFields()) {
-            String query = "UPDATE Animals SET animal_name = ?, animal_species = ?, date_of_birth = ?, animal_age = ?, animal_sex = ?, animal_status = ?, enclosure_id = ? WHERE animal_id = ?";
-            try (PreparedStatement stmt = con.prepareStatement(query)) {
-                stmt.setString(1, AnimalNameFeild.getText());
-                stmt.setString(2, AnimalsSpeciesFeild.getText());
-                stmt.setString(3, AnimalsDOBFeild.getText());
-                stmt.setInt(4, Integer.parseInt(AnimalsAgeFeild.getText()));
-                stmt.setString(5, Animals_SexFeild.getValue());
-                stmt.setString(6, Animals_StatusFeild.getText());
-                stmt.setString(7, AnimalsEnclosureIDfeild.getText());
-                stmt.setString(8, AnimalsIDFeild.getText());
-                stmt.executeUpdate();
+            String updateQuery = "UPDATE Animals SET animal_name = ?, animal_species = ?, date_of_birth = ?, animal_age = ?, animal_sex = ?, animal_status = ?, enclosure_id = ? WHERE animal_id = ?";
+            try (PreparedStatement updateStmt = con.prepareStatement(updateQuery)) {
+                updateStmt.setString(1, AnimalNameFeild.getText());
+                updateStmt.setString(2, AnimalsSpeciesFeild.getText());
+                updateStmt.setString(3, AnimalsDOBFeild.getText());
+                updateStmt.setInt(4, Integer.parseInt(AnimalsAgeFeild.getText()));
+                updateStmt.setString(5, Animals_SexFeild.getValue());
+                updateStmt.setString(6, Animals_StatusFeild.getText());
+                updateStmt.setString(7, AnimalsEnclosureIDfeild.getText());
+                updateStmt.setString(8, AnimalsIDFeild.getText());
+
+                // Execute the update query
+                updateStmt.executeUpdate();
+
+                // Refresh the table with updated data
                 loadAnimalsTable();
-                clearFields();
+                clearFields(); // Clear the fields after update
+
+                // Reset button text to "Update"
+                AnimalsUpdateBtn.setText("Update");
             } catch (Exception e) {
                 showAlert("Error", "Failed to update animal: " + e.getMessage());
             }
         }
     }
+
+
 
     @FXML
     void clearFields() {
@@ -170,7 +179,6 @@ public class AnimalsController {
         alert.showAndWait();
     }
 
-    @FXML
     private void initializeTable() {
         AnimalIDColumn.setCellValueFactory(new PropertyValueFactory<>("animal_id"));
         AnimalNameColumn.setCellValueFactory(new PropertyValueFactory<>("animal_name"));
@@ -180,15 +188,31 @@ public class AnimalsController {
         AnimalStatusColumn.setCellValueFactory(new PropertyValueFactory<>("animal_status"));
         AnimalDOBColumn.setCellValueFactory(new PropertyValueFactory<>("date_of_birth"));
         AnimalEnclosureIDColumn.setCellValueFactory(new PropertyValueFactory<>("enclosure_id"));
+
+        // Add double-click listener to the table
+        AnimalsTable.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) { // Double-click detected
+                Animal selectedAnimal = AnimalsTable.getSelectionModel().getSelectedItem();
+                if (selectedAnimal != null) {
+                    // Populate the fields with the selected animal's data
+                    AnimalsIDFeild.setText(selectedAnimal.getAnimal_id());
+                    AnimalNameFeild.setText(selectedAnimal.getAnimal_name());
+                    AnimalsSpeciesFeild.setText(selectedAnimal.getAnimal_species());
+                    Animals_SexFeild.setValue(selectedAnimal.getAnimal_sex());
+                    AnimalsAgeFeild.setText(String.valueOf(selectedAnimal.getAnimal_age()));
+                    Animals_StatusFeild.setText(selectedAnimal.getAnimal_status());
+                    AnimalsDOBFeild.setText(selectedAnimal.getDate_of_birth());
+                    AnimalsEnclosureIDfeild.setText(selectedAnimal.getEnclosure_id());
+
+                    // Change the "Update" button text to "Save Changes"
+                    AnimalsUpdateBtn.setText("Save Changes");
+                }
+            }
+        });
     }
 
+
     private boolean validateFields() {
-        try {
-            Integer.parseInt(AnimalsAgeFeild.getText());  // Check if age is a valid integer
-        } catch (NumberFormatException e) {
-            showAlert("Invalid Input", "Please enter a valid age.");
-            return false;
-        }
         if (AnimalsIDFeild.getText().isEmpty() || AnimalNameFeild.getText().isEmpty() || AnimalsSpeciesFeild.getText().isEmpty() ||
                 Animals_SexFeild.getValue() == null || AnimalsDOBFeild.getText().isEmpty() || AnimalsEnclosureIDfeild.getText().isEmpty()) {
             showAlert("Invalid Input", "Please fill in all fields.");
@@ -198,42 +222,51 @@ public class AnimalsController {
     }
 
 
-
-@FXML
+    @FXML
     void goToAnimalCare(ActionEvent event) throws IOException {
-        new SceneSwitch(AnimalsPane,"AnimalCare.fxml");
+        new SceneSwitch(AnimalsPane, "AnimalCare.fxml");
     }
 
+    // Go to Animals (this can be left empty or include specific logic if needed)
     @FXML
-    void goToAnimals(ActionEvent event) {}
+    void goToAnimals(ActionEvent event) {
+    }
 
+    // Go to Employees
     @FXML
     void goToEmployees(ActionEvent event) throws IOException {
-        new SceneSwitch(AnimalsPane,"Employees.fxml");
+        new SceneSwitch(AnimalsPane, "Employees.fxml");
     }
 
+    // Go to Enclosures
     @FXML
     void goToEnclosures(ActionEvent event) throws IOException {
-        new SceneSwitch(AnimalsPane,"Enclosures.fxml");
+        new SceneSwitch(AnimalsPane, "Enclosures.fxml");
     }
 
+    // Go to Events
     @FXML
     void goToEvents(ActionEvent event) throws IOException {
-        new SceneSwitch(AnimalsPane,"Events.fxml");
+        new SceneSwitch(AnimalsPane, "Events.fxml");
     }
 
+    // Go to Tickets
     @FXML
     void goToTickets(ActionEvent event) throws IOException {
-        new SceneSwitch(AnimalsPane,"Tickets.fxml");
+        new SceneSwitch(AnimalsPane, "Tickets.fxml");
     }
 
+    // Go to Visitors
     @FXML
     void goToVisitors(ActionEvent event) throws IOException {
-        new SceneSwitch(AnimalsPane,"Visitors.fxml");
+        new SceneSwitch(AnimalsPane, "Visitors.fxml");
     }
 
+    // Go to HomePage
     @FXML
     void goToHomePage(ActionEvent event) throws IOException {
-        new SceneSwitch(AnimalsPane,"HomePage.fxml");
+        new SceneSwitch(AnimalsPane, "HomePage.fxml");
+
     }
 }
+

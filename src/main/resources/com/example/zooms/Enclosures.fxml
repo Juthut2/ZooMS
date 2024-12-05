@@ -115,7 +115,7 @@
                               <TextField fx:id="EnclosureNameFeild" layoutX="156.0" layoutY="80.0" prefHeight="32.0" prefWidth="187.0" />
                               <TextField fx:id="EnclosureCapacityFeild" layoutX="156.0" layoutY="124.0" prefHeight="32.0" prefWidth="187.0" />
                               <TextField fx:id="EnclosureTypeFeild" layoutX="156.0" layoutY="168.0" prefHeight="32.0" prefWidth="187.0" />
-                              <Button fx:id="EnclosureAddBtn" layoutX="28.0" layoutY="420.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="146.0" stylesheets="@values/HomePage.css" text="Add">
+                              <Button fx:id="EnclosureAddBtn" layoutX="28.0" layoutY="420.0" mnemonicParsing="false" onAction="#addEnclosure" prefHeight="57.0" prefWidth="146.0" stylesheets="@values/HomePage.css" text="Add">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -124,7 +124,7 @@
                                     <String fx:value="radius" />
                                  </styleClass>
                               </Button>
-                              <Button fx:id="EnclosureDeleteBtn" layoutX="200.0" layoutY="507.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="146.0" stylesheets="@values/HomePage.css" text="Delete">
+                              <Button fx:id="EnclosureDeleteBtn" layoutX="200.0" layoutY="507.0" mnemonicParsing="false" onAction="#deleteEnclosure" prefHeight="57.0" prefWidth="146.0" stylesheets="@values/HomePage.css" text="Delete">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -133,7 +133,7 @@
                                     <String fx:value="radius" />
                                  </styleClass>
                               </Button>
-                              <Button fx:id="EnclosureClearBtn" layoutX="28.0" layoutY="507.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="146.0" stylesheets="@values/HomePage.css" text="Clear">
+                              <Button fx:id="EnclosureClearBtn" layoutX="28.0" layoutY="507.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="57.0" prefWidth="146.0" stylesheets="@values/HomePage.css" text="Clear">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -142,7 +142,7 @@
                                     <String fx:value="radius" />
                                  </styleClass>
                               </Button>
-                              <Button fx:id="EnclosureUpdateBtn" layoutX="200.0" layoutY="420.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="146.0" stylesheets="@values/HomePage.css" text="Update">
+                              <Button fx:id="EnclosureUpdateBtn" layoutX="200.0" layoutY="420.0" mnemonicParsing="false" onAction="#updateEnclosure" prefHeight="57.0" prefWidth="146.0" stylesheets="@values/HomePage.css" text="Update">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
