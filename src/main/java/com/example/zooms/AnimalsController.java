@@ -1,6 +1,5 @@
 package com.example.zooms;
 
-import com.example.zooms.Animal;
 import com.example.zooms.DBconnectionZoo;
 import com.example.zooms.SceneSwitch;
 import javafx.collections.FXCollections;
@@ -68,27 +67,29 @@ public class AnimalsController {
     public void initialize() {
         con = DBconnectionZoo.ConnectionDB();
         Animals_SexFeild.setItems(FXCollections.observableArrayList("Male", "Female"));
-        initializeTable();  // Ensure this is here to initialize the table columns
+        initializeTable();
         loadAnimalsTable();
     }
 
     @FXML
     void addAnimal(ActionEvent event) {
-        String query = "INSERT INTO Animals (animal_id, enclosure_id, animal_name, animal_sex, animal_age, animal_species, animal_status, date_of_birth) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        try (PreparedStatement stmt = con.prepareStatement(query)) {
-            stmt.setString(1, AnimalsIDFeild.getText());
-            stmt.setString(2, AnimalsEnclosureIDfeild.getText());
-            stmt.setString(3, AnimalNameFeild.getText());
-            stmt.setString(4, Animals_SexFeild.getValue());
-            stmt.setInt(5, Integer.parseInt(AnimalsAgeFeild.getText()));
-            stmt.setString(6, AnimalsSpeciesFeild.getText());
-            stmt.setString(7, Animals_StatusFeild.getText());
-            stmt.setString(8, AnimalsDOBFeild.getText());
-            stmt.executeUpdate();
-            loadAnimalsTable();
-            clearFields();
-        } catch (Exception e) {
-            showAlert("Error", "Failed to add animal: " + e.getMessage());
+        if (validateFields()) {
+            String query = "INSERT INTO Animals (animal_id, enclosure_id, animal_name, animal_sex, animal_age, animal_species, animal_status, date_of_birth) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            try (PreparedStatement stmt = con.prepareStatement(query)) {
+                stmt.setString(1, AnimalsIDFeild.getText());
+                stmt.setString(2, AnimalsEnclosureIDfeild.getText());
+                stmt.setString(3, AnimalNameFeild.getText());
+                stmt.setString(4, Animals_SexFeild.getValue());
+                stmt.setInt(5, Integer.parseInt(AnimalsAgeFeild.getText()));
+                stmt.setString(6, AnimalsSpeciesFeild.getText());
+                stmt.setString(7, Animals_StatusFeild.getText());
+                stmt.setString(8, AnimalsDOBFeild.getText());
+                stmt.executeUpdate();
+                loadAnimalsTable();
+                clearFields();
+            } catch (Exception e) {
+                showAlert("Error", "Failed to add animal: " + e.getMessage());
+            }
         }
     }
 
@@ -107,21 +108,23 @@ public class AnimalsController {
 
     @FXML
     void updateAnimal(ActionEvent event) {
-        String query = "UPDATE Animals SET animal_name = ?, animal_species = ?, date_of_birth = ?, animal_age = ?, animal_sex = ?, animal_status = ?, enclosure_id = ? WHERE animal_id = ?";
-        try (PreparedStatement stmt = con.prepareStatement(query)) {
-            stmt.setString(1, AnimalNameFeild.getText());
-            stmt.setString(2, AnimalsSpeciesFeild.getText());
-            stmt.setString(3, AnimalsDOBFeild.getText());
-            stmt.setInt(4, Integer.parseInt(AnimalsAgeFeild.getText()));
-            stmt.setString(5, Animals_SexFeild.getValue());
-            stmt.setString(6, Animals_StatusFeild.getText());
-            stmt.setString(7, AnimalsEnclosureIDfeild.getText());
-            stmt.setString(8, AnimalsIDFeild.getText());
-            stmt.executeUpdate();
-            loadAnimalsTable();
-            clearFields();
-        } catch (Exception e) {
-            showAlert("Error", "Failed to update animal: " + e.getMessage());
+        if (validateFields()) {
+            String query = "UPDATE Animals SET animal_name = ?, animal_species = ?, date_of_birth = ?, animal_age = ?, animal_sex = ?, animal_status = ?, enclosure_id = ? WHERE animal_id = ?";
+            try (PreparedStatement stmt = con.prepareStatement(query)) {
+                stmt.setString(1, AnimalNameFeild.getText());
+                stmt.setString(2, AnimalsSpeciesFeild.getText());
+                stmt.setString(3, AnimalsDOBFeild.getText());
+                stmt.setInt(4, Integer.parseInt(AnimalsAgeFeild.getText()));
+                stmt.setString(5, Animals_SexFeild.getValue());
+                stmt.setString(6, Animals_StatusFeild.getText());
+                stmt.setString(7, AnimalsEnclosureIDfeild.getText());
+                stmt.setString(8, AnimalsIDFeild.getText());
+                stmt.executeUpdate();
+                loadAnimalsTable();
+                clearFields();
+            } catch (Exception e) {
+                showAlert("Error", "Failed to update animal: " + e.getMessage());
+            }
         }
     }
 
@@ -139,7 +142,7 @@ public class AnimalsController {
 
     private void loadAnimalsTable() {
         ObservableList<Animal> animals = FXCollections.observableArrayList();
-        String query = "SELECT * FROM Animals"; // Ensure the query is correct
+        String query = "SELECT * FROM Animals";
         try (PreparedStatement stmt = con.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
@@ -153,10 +156,8 @@ public class AnimalsController {
                         rs.getString("date_of_birth"),
                         rs.getString("enclosure_id")
                 ));
-                System.out.println("Added animal: " + rs.getString("animal_name"));
             }
-
-            AnimalsTable.setItems(animals); // Set the data to the table
+            AnimalsTable.setItems(animals);
         } catch (Exception e) {
             showAlert("Error", "Failed to load animals: " + e.getMessage());
         }
@@ -169,7 +170,6 @@ public class AnimalsController {
         alert.showAndWait();
     }
 
-    // CellValueFactories
     @FXML
     private void initializeTable() {
         AnimalIDColumn.setCellValueFactory(new PropertyValueFactory<>("animal_id"));
@@ -182,7 +182,24 @@ public class AnimalsController {
         AnimalEnclosureIDColumn.setCellValueFactory(new PropertyValueFactory<>("enclosure_id"));
     }
 
-    @FXML
+    private boolean validateFields() {
+        try {
+            Integer.parseInt(AnimalsAgeFeild.getText());  // Check if age is a valid integer
+        } catch (NumberFormatException e) {
+            showAlert("Invalid Input", "Please enter a valid age.");
+            return false;
+        }
+        if (AnimalsIDFeild.getText().isEmpty() || AnimalNameFeild.getText().isEmpty() || AnimalsSpeciesFeild.getText().isEmpty() ||
+                Animals_SexFeild.getValue() == null || AnimalsDOBFeild.getText().isEmpty() || AnimalsEnclosureIDfeild.getText().isEmpty()) {
+            showAlert("Invalid Input", "Please fill in all fields.");
+            return false;
+        }
+        return true;
+    }
+
+
+
+@FXML
     void goToAnimalCare(ActionEvent event) throws IOException {
         new SceneSwitch(AnimalsPane,"AnimalCare.fxml");
     }
