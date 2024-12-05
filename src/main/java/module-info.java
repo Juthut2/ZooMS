@@ -10,6 +10,8 @@ module com.example.zooms {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.sql;
+    requires java.desktop;
 
     opens com.example.zooms to javafx.fxml;
     exports com.example.zooms;

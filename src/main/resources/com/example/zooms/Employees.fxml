@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="EmployeesPane" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zooms.EmployeesController">
+<AnchorPane fx:id="EmployeesPane" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zooms.EmployeesController">
    <children>
       <StackPane layoutX="6.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0">
          <children>
@@ -95,12 +95,12 @@
                                     <Font name="Tahoma" size="18.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="156.0" layoutY="35.0" prefHeight="32.0" prefWidth="187.0" />
-                              <TextField layoutX="156.0" layoutY="80.0" prefHeight="32.0" prefWidth="187.0" />
-                              <TextField layoutX="156.0" layoutY="124.0" prefHeight="32.0" prefWidth="187.0" />
-                              <TextField layoutX="156.0" layoutY="168.0" prefHeight="32.0" prefWidth="187.0" />
-                              <TextField layoutX="156.0" layoutY="212.0" prefHeight="32.0" prefWidth="187.0" />
-                              <Button layoutX="28.0" layoutY="420.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="146.0" stylesheets="@values/HomePage.css" text="Add">
+                              <TextField fx:id="EmployeeFeild" layoutX="156.0" layoutY="35.0" prefHeight="32.0" prefWidth="187.0" />
+                              <TextField fx:id="EmployeeFirstNameFeild" layoutX="156.0" layoutY="80.0" prefHeight="32.0" prefWidth="187.0" />
+                              <TextField fx:id="EmployeeLastNameFeild" layoutX="156.0" layoutY="124.0" prefHeight="32.0" prefWidth="187.0" />
+                              <TextField fx:id="EmployeeRoleFeild" layoutX="156.0" layoutY="168.0" prefHeight="32.0" prefWidth="187.0" />
+                              <TextField fx:id="EmployeeDateHiredFeild" layoutX="156.0" layoutY="212.0" prefHeight="32.0" prefWidth="187.0" />
+                              <Button fx:id="AddBtn" layoutX="28.0" layoutY="420.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="146.0" stylesheets="@values/HomePage.css" text="Add">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -109,7 +109,7 @@
                                     <String fx:value="radius" />
                                  </styleClass>
                               </Button>
-                              <Button layoutX="200.0" layoutY="507.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="146.0" stylesheets="@values/HomePage.css" text="Delete">
+                              <Button fx:id="DeleteBtn" layoutX="200.0" layoutY="507.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="146.0" stylesheets="@values/HomePage.css" text="Delete">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -118,7 +118,7 @@
                                     <String fx:value="radius" />
                                  </styleClass>
                               </Button>
-                              <Button layoutX="28.0" layoutY="507.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="146.0" stylesheets="@values/HomePage.css" text="Clear">
+                              <Button fx:id="ClearBtn" layoutX="28.0" layoutY="507.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="146.0" stylesheets="@values/HomePage.css" text="Clear">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -127,7 +127,7 @@
                                     <String fx:value="radius" />
                                  </styleClass>
                               </Button>
-                              <Button layoutX="200.0" layoutY="420.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="146.0" stylesheets="@values/HomePage.css" text="Update">
+                              <Button fx:id="UpdateBtn" layoutX="200.0" layoutY="420.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="146.0" stylesheets="@values/HomePage.css" text="Update">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -141,7 +141,7 @@
                                     <Font name="Tahoma" size="18.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="156.0" layoutY="258.0" prefHeight="32.0" prefWidth="187.0" />
+                              <TextField fx:id="EmployeeSalaryFeild" layoutX="156.0" layoutY="258.0" prefHeight="32.0" prefWidth="187.0" />
                            </children>
                            <styleClass>
                               <String fx:value="radius" />
@@ -156,7 +156,7 @@
                               <String fx:value="shadow" />
                            </styleClass>
                            <children>
-                              <TableView layoutX="8.0" layoutY="8.0" prefHeight="665.0" prefWidth="1009.0">
+                              <TableView fx:id="EmployeeTable" layoutX="8.0" layoutY="8.0" prefHeight="665.0" prefWidth="1009.0">
                                  <columns>
                                     <TableColumn prefWidth="75.0" text="Employee ID" />
                                     <TableColumn prefWidth="75.0" text="First Name" />
