@@ -77,10 +77,10 @@
                            <children>
                               <TableView fx:id="Enclosure_Table" layoutX="8.0" layoutY="8.0" prefHeight="665.0" prefWidth="1009.0">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="Enclosure ID" />
-                                  <TableColumn prefWidth="75.0" text="Enclosure Name" />
-                                    <TableColumn prefWidth="75.0" text="Capacity" />
-                                    <TableColumn prefWidth="75.0" text="Type" />
+                                  <TableColumn fx:id="Enclosure_ID" prefWidth="75.0" text="Enclosure ID" />
+                                  <TableColumn fx:id="Enclosure_Name" prefWidth="75.0" text="Enclosure Name" />
+                                    <TableColumn fx:id="Enclosure_Capacity" prefWidth="75.0" text="Capacity" />
+                                    <TableColumn fx:id="Type" prefWidth="75.0" text="Type" />
                                     <TableColumn prefWidth="75.0" text="Current Animal Count" />
                                 </columns>
                                  <columnResizePolicy>
