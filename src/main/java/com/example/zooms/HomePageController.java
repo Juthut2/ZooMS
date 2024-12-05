@@ -47,4 +47,8 @@ public class HomePageController {
         new SceneSwitch(HomePagePane,"Visitors.fxml");
     }
 
+    @FXML
+    void goToHomePage(ActionEvent event) throws IOException {
+        new SceneSwitch(HomePagePane,"HomePage.fxml");
+    }
 }

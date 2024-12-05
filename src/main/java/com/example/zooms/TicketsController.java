@@ -46,4 +46,8 @@ public class TicketsController {
         new SceneSwitch(TicketsPane,"Visitors.fxml");
     }
 
+    @FXML
+    void goToHomePage(ActionEvent event) throws IOException {
+        new SceneSwitch(TicketsPane,"HomePage.fxml");
+    }
 }

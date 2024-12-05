@@ -47,4 +47,8 @@ public class AnimalsController {
         new SceneSwitch(AnimalsPane,"Visitors.fxml");
     }
 
+    @FXML
+    void goToHomePage(ActionEvent event) throws IOException {
+        new SceneSwitch(AnimalsPane,"HomePage.fxml");
+    }
 }

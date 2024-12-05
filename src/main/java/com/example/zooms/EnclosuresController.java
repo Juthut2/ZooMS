@@ -46,4 +46,8 @@ public class EnclosuresController {
         new SceneSwitch(EnclosuresPane, "Vistors.fxml");
     }
 
+    @FXML
+    void goToHomePage(ActionEvent event) throws IOException {
+        new SceneSwitch(EnclosuresPane,"HomePage.fxml");
+    }
 }
