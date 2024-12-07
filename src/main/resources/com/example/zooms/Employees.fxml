@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="EmployeesPane" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zooms.EmployeesController">
+<AnchorPane fx:id="EmployeesPane" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zooms.EmployeesController">
    <children>
       <StackPane layoutX="6.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0">
          <children>
@@ -85,7 +85,7 @@
                                     <Font name="Tahoma" size="18.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="10.0" layoutY="168.0" prefHeight="32.0" prefWidth="98.0" text="Role Name:">
+                              <Label layoutX="10.0" layoutY="168.0" prefHeight="32.0" prefWidth="98.0" text="Role ID:">
                                  <font>
                                     <Font name="Tahoma" size="18.0" />
                                  </font>
@@ -142,6 +142,15 @@
                                  </font>
                               </Label>
                               <TextField fx:id="EmployeeSalaryFeild" layoutX="156.0" layoutY="258.0" prefHeight="32.0" prefWidth="187.0" />
+                              <Button fx:id="Roles" layoutX="115.0" layoutY="583.0" mnemonicParsing="false" onAction="#goToRoles" prefHeight="57.0" prefWidth="146.0" stylesheets="@values/HomePage.css" text="Create Roles">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="nav-btn" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                              </Button>
                            </children>
                            <styleClass>
                               <String fx:value="radius" />

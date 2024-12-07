@@ -13,7 +13,7 @@ public class DBconnectionZoo {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             // Connect to the MySQL database
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/altf4_db", "Admin", "Putbol");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/altf4_db-1", "Admin", "Putbol");
             System.out.println("Connection Succeeded");
             return con; // Return the connection object
         } catch (Exception e) {

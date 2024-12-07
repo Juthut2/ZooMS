@@ -158,8 +158,14 @@ public class EmployeesController {
     void goToVisitors(ActionEvent event) throws IOException {
         new SceneSwitch(EmployeesPane, "Visitors.fxml");
     }
+
     @FXML
     void goToHomePage(ActionEvent event) throws IOException {
         new SceneSwitch(EmployeesPane,"HomePage.fxml");
+    }
+
+    @FXML
+    void goToRoles(ActionEvent event) throws IOException {
+        new SceneSwitch(EmployeesPane,"RolesPage.fxml");
     }
 }

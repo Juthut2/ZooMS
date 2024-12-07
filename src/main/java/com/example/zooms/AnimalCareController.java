@@ -21,7 +21,9 @@ public class AnimalCareController {
     @FXML
     private AnchorPane AnimalCarePane;
     @FXML
-    private Button AddBtn, UpdateBtn, DeleteBtn, ClearBtn;
+    private AnchorPane animalCare_form;
+    @FXML
+    private Button AddBtn, UpdateBtn, DeleteBtn, ClearBtn, Caretype;
 
     private Connection con;
 
@@ -114,7 +116,7 @@ public class AnimalCareController {
     }
 
 
-@FXML
+    @FXML
     void goToAnimalCare(ActionEvent event) {
 
     }
@@ -152,5 +154,10 @@ public class AnimalCareController {
     @FXML
     void goToHomePage(ActionEvent event) throws IOException {
         new SceneSwitch(AnimalCarePane,"HomePage.fxml");
+    }
+
+    @FXML
+    void goToCareType(ActionEvent event) throws IOException {
+        new SceneSwitch(AnimalCarePane, "CareType.fxml");
     }
 }
