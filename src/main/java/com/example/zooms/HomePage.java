@@ -16,7 +16,7 @@ public class HomePage extends Application {
 
 
         // Load the FXML file and set the scene
-        Scene scene = new Scene(fxmlLoader.load());
+        Scene scene = new Scene(fxmlLoader.load()); 
 
         // Set the title and display the stage
         stage.setTitle("Modeng Zoo Management System");
