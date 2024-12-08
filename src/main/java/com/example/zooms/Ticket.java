@@ -4,19 +4,23 @@ public class Ticket {
 
     private String ticketId;
     private String ticketType;
-    private double ticketPrice;  // Change to double for numeric handling
-    private String validFrom;
-    private String validTo;
+    private double ticketPrice;
+    private String dateIssued;
+    private String validityDate;
+    private String eventName;  // This will hold the event name when displaying in the table
 
-    public Ticket(String ticketId, String ticketType, double ticketPrice, String validFrom, String validTo) {
+    // Constructor
+    public Ticket(String ticketId, String ticketType, double ticketPrice, String dateIssued, String validityDate, String eventName) {
         this.ticketId = ticketId;
         this.ticketType = ticketType;
-        this.ticketPrice = ticketPrice;  // Use double for price
-        this.validFrom = validFrom;
-        this.validTo = validTo;
+        this.ticketPrice = ticketPrice;
+        this.dateIssued = dateIssued;
+        this.validityDate = validityDate;
+        this.eventName = eventName;
     }
 
     // Getters and Setters
+
     public String getTicketId() {
         return ticketId;
     }
@@ -34,26 +38,46 @@ public class Ticket {
     }
 
     public double getTicketPrice() {
-        return ticketPrice;  // Return as double
+        return ticketPrice;
     }
 
     public void setTicketPrice(double ticketPrice) {
-        this.ticketPrice = ticketPrice;  // Accept double as input
+        this.ticketPrice = ticketPrice;
     }
 
-    public String getValidFrom() {
-        return validFrom;
+    public String getDateIssued() {
+        return dateIssued;
     }
 
-    public void setValidFrom(String validFrom) {
-        this.validFrom = validFrom;
+    public void setDateIssued(String dateIssued) {
+        this.dateIssued = dateIssued;
     }
 
-    public String getValidTo() {
-        return validTo;
+    public String getValidityDate() {
+        return validityDate;
     }
 
-    public void setValidTo(String validTo) {
-        this.validTo = validTo;
+    public void setValidityDate(String validityDate) {
+        this.validityDate = validityDate;
+    }
+
+    public String getEventName() {
+        return eventName;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "ticketId='" + ticketId + '\'' +
+                ", ticketType='" + ticketType + '\'' +
+                ", ticketPrice=" + ticketPrice +
+                ", dateIssued='" + dateIssued + '\'' +
+                ", validityDate='" + validityDate + '\'' +
+                ", eventName='" + eventName + '\'' +
+                '}';
     }
 }
