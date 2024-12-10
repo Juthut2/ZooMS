@@ -4,9 +4,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -168,6 +172,34 @@ public class EnclosuresController {
         }
     }
 
+    @FXML
+    void searchEnclosure(ActionEvent event) throws IOException {
+        // Show a dialog to prompt the user for the Enclosure ID
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Search Enclosure");
+        dialog.setHeaderText("Enter Enclosure ID");
+        dialog.setContentText("Enclosure ID:");
+        dialog.showAndWait().ifPresent(enclosureId -> {
+            try {
+                // Corrected FXML file name and controller
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("AnimalsInEnclosure.fxml"));
+                Parent root = loader.load();
+
+                // Pass the Enclosure_ID to InsideEnclosureController
+                InsideEnclosureController controller = loader.getController();
+                controller.setEnclosureIdAndLoadData(enclosureId);
+
+                // Switch the scene
+                Stage stage = (Stage) EnclosuresPane.getScene().getWindow();
+                stage.setScene(new Scene(root));
+            } catch (IOException e) {
+                showAlert("Error", "Failed to load Inside Enclosure view: " + e.getMessage());
+            }
+        });
+    }
+
+
+
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
@@ -213,5 +245,7 @@ public class EnclosuresController {
     @FXML
     void goToHomePage(ActionEvent event) throws IOException {
         new SceneSwitch(EnclosuresPane,"HomePage.fxml");
+
+
     }
 }
