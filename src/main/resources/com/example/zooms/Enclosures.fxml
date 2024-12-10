@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="EnclosuresPane" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zooms.EnclosuresController">
+<AnchorPane fx:id="EnclosuresPane" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zooms.EnclosuresController">
    <children>
       <StackPane layoutX="6.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0">
          <children>
@@ -75,7 +75,7 @@
                               <String fx:value="shadow" />
                            </styleClass>
                            <children>
-                              <TableView fx:id="Enclosure_Table" layoutX="8.0" layoutY="8.0" prefHeight="665.0" prefWidth="1009.0">
+                              <TableView fx:id="Enclosure_Table" layoutX="8.0" layoutY="8.0" prefHeight="665.0" prefWidth="1010.0">
                                 <columns>
                                   <TableColumn fx:id="Enclosure_ID" prefWidth="75.0" text="Enclosure ID" />
                                   <TableColumn fx:id="Enclosure_Name" prefWidth="75.0" text="Enclosure Name" />
@@ -143,6 +143,15 @@
                                  </styleClass>
                               </Button>
                               <Button fx:id="EnclosureUpdateBtn" layoutX="200.0" layoutY="420.0" mnemonicParsing="false" onAction="#updateEnclosure" prefHeight="57.0" prefWidth="146.0" stylesheets="@values/HomePage.css" text="Update">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="nav-btn" />
+                                    <String fx:value="radius" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="Search" layoutX="114.0" layoutY="585.0" mnemonicParsing="false" onAction="#goToAnimalsInEnclosuresPage" prefHeight="57.0" prefWidth="146.0" stylesheets="@values/HomePage.css" text="Search">
                                  <font>
                                     <Font size="18.0" />
                                  </font>

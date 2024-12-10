@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnimalsInEnclosuresPane" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zooms.AnimalsInEnclosures">
+   <children>
+      <StackPane layoutX="6.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1440.0">
+         <children>
+            <AnchorPane prefHeight="800.0" prefWidth="1440.0">
+               <children>
+                  <AnchorPane layoutX="-7.0" layoutY="-2.0" prefHeight="93.0" prefWidth="1453.0" style="-fx-background-color: #4b8a3d;" stylesheets="@values/HomePage.css" AnchorPane.leftAnchor="-7.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
+                     <children>
+                        <HBox layoutX="702.0" layoutY="25.0" spacing="10.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#goToAnimals" prefHeight="42.0" prefWidth="90.0" styleClass="btn" stylesheets="@values/HomePage.css" text="Animals">
+                                 <font>
+                                    <Font name="Segoe UI Black" size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#goToEnclosures" prefHeight="42.0" prefWidth="106.0" style="-fx-background-color: #2e4a26;" stylesheets="@values/HomePage.css" text="Enclosures" textFill="WHITE">
+                                 <font>
+                                    <Font name="Segoe UI Black" size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#goToAnimalCare" prefHeight="42.0" prefWidth="118.0" styleClass="btn" stylesheets="@values/HomePage.css" text="Animal Care">
+                                 <font>
+                                    <Font name="Segoe UI Black" size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#goToEvents" prefHeight="42.0" prefWidth="80.0" styleClass="btn" stylesheets="@values/HomePage.css" text="Events">
+                                 <font>
+                                    <Font name="Segoe UI Black" size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#goToVisitors" prefHeight="42.0" prefWidth="91.0" styleClass="btn" stylesheets="@values/HomePage.css" text="Visitors">
+                                 <font>
+                                    <Font name="Segoe UI Black" size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#goToTickets" prefHeight="42.0" prefWidth="80.0" styleClass="btn" stylesheets="@values/HomePage.css" text="Tickets">
+                                 <font>
+                                    <Font name="Segoe UI Black" size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#goToEmployees" prefHeight="42.0" prefWidth="109.0" styleClass="btn" stylesheets="@values/HomePage.css" text="Employees">
+                                 <font>
+                                    <Font name="Segoe UI Black" size="16.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Label layoutX="30.0" layoutY="14.0" prefHeight="64.0" prefWidth="260.0" text="Moodeng ZooMS">
+                           <font>
+                              <Font name="Microsoft Tai Le Bold" size="31.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="29.0" layoutY="15.0" mnemonicParsing="false" onAction="#goToHomePage" prefHeight="64.0" prefWidth="263.0" styleClass="transparent" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="-6.0" layoutY="91.0" prefHeight="707.0" prefWidth="1447.0">
+                     <children>
+                        <AnchorPane layoutX="30.0" layoutY="97.0" prefHeight="476.0" prefWidth="1390.0" stylesheets="@values/HomePage.css">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="radius" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                           <children>
+                              <TableView fx:id="AnimalsTable" layoutX="8.0" layoutY="8.0" prefHeight="460.0" prefWidth="1375.0">
+                                 <columns>
+                                    <TableColumn fx:id="AnimalIDColumn" prefWidth="75.0" text="Animal ID" />
+                                    <TableColumn fx:id="AnimalEnclosureIDColumn" prefWidth="75.0" text="Enclosure ID" />
+                                    <TableColumn fx:id="AnimalNameColumn" prefWidth="75.0" text="Animal Name" />
+                                    <TableColumn fx:id="AnimalSexColumn" prefWidth="75.0" text="Sex" />
+                                    <TableColumn fx:id="AnimalAgeColumn" prefWidth="75.0" text="Age" />
+                                    <TableColumn fx:id="AnimalSpeciesColumn" prefWidth="75.0" text="Species" />
+                                    <TableColumn fx:id="AnimalDOBColumn" prefWidth="75.0" text="Date of Birth" />
+                                    <TableColumn fx:id="AnimalStatusColumn" prefWidth="75.0" text="Status" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <TextField fx:id="SearchField" layoutX="764.0" layoutY="597.0" onAction="#searchEnclosureByID" prefHeight="48.0" prefWidth="197.0" text="Search">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="GoBackButton" layoutX="508.0" layoutY="597.0" mnemonicParsing="false" onAction="#goToEnclosures" prefHeight="48.0" prefWidth="197.0" styleClass="nav-btn" stylesheets="@values/HomePage.css" text="Go Back">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="EnclosureNameLabel" layoutX="521.0" layoutY="23.0" prefHeight="58.0" prefWidth="413.0" text="&lt;Enclosure Name&gt;">
+                           <font>
+                              <Font name="Segoe UI" size="48.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
