@@ -176,17 +176,23 @@ public class EventsController {
     private void loadEventsTable() {
         ObservableList<Event> events = FXCollections.observableArrayList();
         String query = """
-                SELECT ze.event_id, ze.event_name, ze.event_date, ze.event_location, ze.event_status,
-                       a.animal_name AS animal_name, CONCAT(e.first_name, ' ', e.last_name) AS employee_name
-                FROM ZooEvents ze
-                JOIN Animals a ON ze.animal_id = a.animal_id
-                JOIN Employees e ON ze.employee_id = e.employee_id
-                """;
+            SELECT ze.event_id, ze.event_name, ze.event_date, ze.event_location, ze.event_status,
+                   a.animal_name AS animal_name, CONCAT(e.first_name, ' ', e.last_name) AS employee_name
+            FROM ZooEvents ze
+            JOIN Animals a ON ze.animal_id = a.animal_id
+            JOIN Employees e ON ze.employee_id = e.employee_id
+            """;
         try (PreparedStatement stmt = con.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
+                String eventId = rs.getString("event_id");
+                // Skip the event with a zero event_id
+                if ("0".equals(eventId)) {
+                    continue;
+                }
+
                 events.add(new Event(
-                        rs.getString("event_id"),
+                        eventId,
                         rs.getString("animal_name"),
                         rs.getString("employee_name"),
                         rs.getString("event_name"),

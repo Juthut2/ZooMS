@@ -155,22 +155,29 @@ public class AnimalsController {
         try (PreparedStatement stmt = con.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
-                animals.add(new Animal(
-                        rs.getString("animal_id"),
-                        rs.getString("animal_name"),
-                        rs.getString("animal_species"),
-                        rs.getString("animal_sex"),
-                        rs.getInt("animal_age"),
-                        rs.getString("animal_status"),
-                        rs.getString("date_of_birth"),
-                        rs.getString("enclosure_id")
-                ));
+                // Get the animal_id from the result set
+                String animalId = rs.getString("animal_id");
+
+                // Check if the animal_id is not 0, and if so, add the animal to the list
+                if (!animalId.equals("0")) {
+                    animals.add(new Animal(
+                            animalId,
+                            rs.getString("animal_name"),
+                            rs.getString("animal_species"),
+                            rs.getString("animal_sex"),
+                            rs.getInt("animal_age"),
+                            rs.getString("animal_status"),
+                            rs.getString("date_of_birth"),
+                            rs.getString("enclosure_id")
+                    ));
+                }
             }
             AnimalsTable.setItems(animals);
         } catch (Exception e) {
             showAlert("Error", "Failed to load animals: " + e.getMessage());
         }
     }
+
 
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);

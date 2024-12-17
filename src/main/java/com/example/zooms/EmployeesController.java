@@ -154,8 +154,14 @@ public class EmployeesController {
         try (PreparedStatement stmt = con.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
+                String employeeId = rs.getString("employee_id");
+                // Skip the employee with a zero employee_id
+                if (employeeId.equals("0")) {
+                    continue;
+                }
+
                 employeeList.add(new Employee(
-                        rs.getString("employee_id"),
+                        employeeId,
                         rs.getString("first_name"),
                         rs.getString("last_name"),
                         rs.getString("role_name"), // Role Name
@@ -168,6 +174,7 @@ public class EmployeesController {
             showAlert("Error", "Failed to load employees: " + e.getMessage());
         }
     }
+
 
     private String[] getRoleDetails(String roleId) {
         String query = "SELECT role_name, salary FROM Roles WHERE role_id = ?";

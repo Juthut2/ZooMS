@@ -159,8 +159,14 @@ public class EnclosuresController {
         String query = "SELECT * FROM enclosures";
         try (PreparedStatement stmt = con.prepareStatement(query); ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
+                String enclosureId = rs.getString("enclosure_id");
+                // Skip the enclosure with a zero enclosure_id
+                if ("0".equals(enclosureId)) {
+                    continue;
+                }
+
                 enclosureList.add(new Enclosure(
-                        rs.getString("enclosure_id"),
+                        enclosureId,
                         rs.getString("enclosure_name"),
                         rs.getInt("enclosure_capacity"),
                         rs.getString("enclosure_type")
@@ -171,6 +177,7 @@ public class EnclosuresController {
             e.printStackTrace();
         }
     }
+
 
     @FXML
     void searchEnclosure(ActionEvent event) throws IOException {

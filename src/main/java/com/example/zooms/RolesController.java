@@ -125,13 +125,20 @@ public class RolesController {
         String query = "SELECT * FROM Roles";
         try (PreparedStatement stmt = con.prepareStatement(query); ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
-                rolesList.add(new Role(rs.getInt("role_id"), rs.getString("role_name"), rs.getDouble("salary")));
+                int roleId = rs.getInt("role_id");
+                // Skip the role with a zero role_id
+                if (roleId == 0) {
+                    continue;
+                }
+
+                rolesList.add(new Role(roleId, rs.getString("role_name"), rs.getDouble("salary")));
             }
             EmployeeTable.setItems(rolesList);
         } catch (SQLException e) {
             showAlert("Error", "Failed to load roles data: " + e.getMessage());
         }
     }
+
 
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
