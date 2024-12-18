@@ -19,7 +19,7 @@ public class HomePage extends Application {
         Scene scene = new Scene(fxmlLoader.load()); 
 
         // Set the title and display the stage
-        stage.setTitle("Modeng Zoo Management System");
+        stage.setTitle("Moodeng Zoo Management System");
         stage.setScene(scene);
         stage.show();
     }

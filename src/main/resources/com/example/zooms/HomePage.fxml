@@ -12,11 +12,11 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="HomePagePane" prefHeight="800.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zooms.HomePageController">
+<AnchorPane fx:id="HomePagePane" prefHeight="888.0" prefWidth="1446.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zooms.HomePageController">
    <children>
-      <StackPane layoutX="6.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="802.0" prefWidth="1446.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <StackPane layoutX="6.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="891.0" prefWidth="1446.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane prefHeight="802.0" prefWidth="1457.0">
+            <AnchorPane prefHeight="800.0" prefWidth="1446.0">
                <children>
                   <AnchorPane layoutX="-7.0" layoutY="-2.0" prefHeight="93.0" prefWidth="1448.0" style="-fx-background-color: #4b8a3d;" stylesheets="@values/HomePage.css" AnchorPane.leftAnchor="-7.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
                      <children>
@@ -67,9 +67,9 @@
                         <Button layoutX="34.0" layoutY="15.0" mnemonicParsing="false" onAction="#goToHomePage" prefHeight="64.0" prefWidth="263.0" styleClass="transparent" />
                      </children>
                   </AnchorPane>
-                  <ScrollPane hbarPolicy="NEVER" layoutY="91.0" prefHeight="709.0" prefWidth="1446.0" vbarPolicy="NEVER">
+                  <ScrollPane hbarPolicy="NEVER" layoutY="91.0" prefHeight="800.0" prefWidth="1446.0" vbarPolicy="NEVER">
                     <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1800.0" prefWidth="1446.0">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1077.0" prefWidth="1446.0">
                            <children>
                               <ImageView fitHeight="543.0" fitWidth="1507.0" layoutX="-28.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-67.0" AnchorPane.topAnchor="-4.0">
                                  <image>
@@ -88,7 +88,7 @@
                                           <Font name="Calibri" size="36.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="60.0" layoutY="105.0" prefHeight="42.0" prefWidth="721.0" text="Welcome to Moodeng Zoo Management System, your modern solution for simplifying zoo">
+                                    <Label layoutX="60.0" layoutY="105.0" prefHeight="42.0" prefWidth="721.0" text="Welcome to Moodeng ZooMS, your modern solution for simplifying zoo">
                                        <font>
                                           <Font name="Arial" size="18.0" />
                                        </font>
@@ -153,51 +153,6 @@
                                     <Font name="Bodoni MT" size="48.0" />
                                  </font>
                               </Label>
-                              <AnchorPane layoutX="-1.0" layoutY="1075.0" prefHeight="632.0" prefWidth="1440.0" styleClass="white-bg" stylesheets="@values/HomePage.css">
-                                 <children>
-                                    <Pane layoutX="14.0" layoutY="26.0" prefHeight="272.0" prefWidth="418.0" stylesheets="@values/HomePage.css">
-                                       <styleClass>
-                                          <String fx:value="pane" />
-                                          <String fx:value="radius" />
-                                       </styleClass>
-                                       <children>
-                                          <ImageView fitHeight="216.0" fitWidth="216.0" layoutX="14.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@images/user.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Label layoutX="221.0" layoutY="180.0" prefHeight="64.0" prefWidth="183.0" text="Total Number of Visitors">
-                                             <font>
-                                                <Font name="Impact" size="18.0" />
-                                             </font>
-                                          </Label>
-                                          <Label alignment="CENTER_RIGHT" layoutX="237.0" layoutY="43.0" prefHeight="50.0" prefWidth="167.0" text="0">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </Pane>
-                                    <Pane layoutX="449.0" layoutY="26.0" prefHeight="272.0" prefWidth="418.0" stylesheets="@values/HomePage.css">
-                                       <styleClass>
-                                          <String fx:value="pane" />
-                                          <String fx:value="radius" />
-                                       </styleClass>
-                                    </Pane>
-                                    <Pane layoutX="14.0" layoutY="316.0" prefHeight="272.0" prefWidth="418.0" stylesheets="@values/HomePage.css">
-                                       <styleClass>
-                                          <String fx:value="pane" />
-                                          <String fx:value="radius" />
-                                       </styleClass>
-                                    </Pane>
-                                    <Pane layoutX="449.0" layoutY="316.0" prefHeight="272.0" prefWidth="418.0" stylesheets="@values/HomePage.css">
-                                       <styleClass>
-                                          <String fx:value="pane" />
-                                          <String fx:value="radius" />
-                                       </styleClass>
-                                    </Pane>
-                                 </children>
-                              </AnchorPane>
                            </children>
                         </AnchorPane>
                     </content>

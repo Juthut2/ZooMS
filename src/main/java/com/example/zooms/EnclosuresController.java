@@ -30,6 +30,10 @@ public class EnclosuresController {
     private Button EnclosureAddBtn, EnclosureUpdateBtn, EnclosureDeleteBtn, EnclosureClearBtn;
 
     @FXML
+    private Button Search;
+
+
+    @FXML
     private TableColumn<?, ?> Enclosure_ID;
     @FXML
     private TableColumn<?, ?> Enclosure_Name;
@@ -207,6 +211,11 @@ public class EnclosuresController {
 
 
 
+
+
+
+
+
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
@@ -254,5 +263,9 @@ public class EnclosuresController {
         new SceneSwitch(EnclosuresPane,"HomePage.fxml");
 
 
+    }
+    @FXML
+    void goToAnimalsInEnclosuresPage(ActionEvent event) throws IOException {
+        new SceneSwitch(EnclosuresPane,"AnimalsInEnclosures.fxml");
     }
 }

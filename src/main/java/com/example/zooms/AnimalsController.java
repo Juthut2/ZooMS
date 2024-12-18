@@ -229,6 +229,8 @@ public class AnimalsController {
     }
 
 
+
+
     @FXML
     void goToAnimalCare(ActionEvent event) throws IOException {
         new SceneSwitch(AnimalsPane, "AnimalCare.fxml");
